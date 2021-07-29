@@ -1,16 +1,16 @@
-Activate Microsoft Graph for Office 365
+<div align="center">#Activate Microsoft Graph for Office 365</div>
 
-#Microsoft Docs
+##Microsoft Docs
 asdf
 
-#Other articles
+##Other articles
 asdf
 
-#People to follow
+##People to follow
 asdf
 
-#YouTube channels
+##YouTube channels
 asdf
 
-#YouTube videos
+##YouTube videos
 asdf
