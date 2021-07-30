@@ -1,16 +1,16 @@
-<div align="center">#Activate Microsoft Graph for Office 365</div>
+<div align="center"><h1>Activate Microsoft Graph for Office 365</h1></div>
 
-##Microsoft Docs
+<h2>Microsoft Docs</h2>
 asdf
 
-##Other articles
+<h2>Other articles</h2>
 asdf
 
-##People to follow
+<h2>People to follow</h2>
 asdf
 
-##YouTube channels
+<h2>YouTube channels</h2>
 asdf
 
-##YouTube videos
+<h2>YouTube videos</h2>
 asdf
