@@ -1,8 +1,7 @@
 (() => {
   "use strict";
 
-  // Paste the same flow URL used in timmayo/classes/index.html (POWER_AUTOMATE_URL).
-  const POWER_AUTOMATE_URL = "PASTE_FLOW_URL_HERE";
+  const POWER_AUTOMATE_URL = "https://d5753d79c5f9e75bbb0e8769af2df5.0e.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/9434d58a68734ad184720a6ff6c70af4/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rwT2YbMa2hHA9-HL7G6R2mYcbv3t5NvaN1pAUWmR1mE";
 
   const $ = id => document.getElementById(id);
   const root = document.documentElement;
