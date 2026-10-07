@@ -52,3 +52,22 @@ footer{max-width:1000px;margin:0 auto;padding:32px 24px;color:var(--muted)}
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Class materials page */
+.panel{max-width:560px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:32px}
+.panel[hidden]{display:none}
+.panel label{display:block;margin-bottom:6px;color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input{flex:1 1 200px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit}
+#msg{color:var(--muted);min-height:1.5em;margin:12px 0 0}
+.files{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}
+.files li{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.help{padding-top:0}
+.top a[aria-current=page]{color:var(--accent)}
+
+/* Clickable class tiles */
+.cards li{padding:0}
+.cards a{display:block;height:100%;padding:16px;color:var(--fg);text-decoration:none;border-radius:var(--radius);transition:background .15s}
+.cards li:hover{border-color:var(--accent)}
+.cards a:hover,.cards a:focus-visible{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.cards a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
