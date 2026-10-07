@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class materials · Tim Mayo</title>
+  <meta name="description" content="Slides and materials for Tim Mayo's Power Platform classes.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html">Tim Mayo</a>
+    <nav>
+      <a href="index.html#teaching">Teaching</a>
+      <a href="materials.html" aria-current="page">Class materials</a>
+      <a href="index.html#repos">Repositories</a>
+      <button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Class materials</p>
+      <h1 id="title">Download your slides.</h1>
+      <p class="lede" id="intro">Enter the password provided in class.</p>
+    </section>
+
+    <section id="login" class="panel">
+      <form id="form" autocomplete="off">
+        <label for="pw">Password</label>
+        <div class="row">
+          <input id="pw" type="password" required>
+          <button class="btn primary" type="submit">Access materials</button>
+        </div>
+      </form>
+      <p id="msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="materials" class="panel" hidden>
+      <ul id="list" class="files"></ul>
+      <button id="logout" class="btn" type="button">Log out</button>
+    </section>
+
+    <section class="help">
+      <h2>Class resources</h2>
+      <ul>
+        <li><a href="https://mslearningcampus.com">Sign in to Skillable (class VMs)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/timmayo">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/mayotim/">LinkedIn</a>
+  </footer>
+
+  <script src="assets/js/materials.js"></script>
+</body>
+</html>
