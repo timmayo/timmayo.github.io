@@ -1,4 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tim Mayo · Power Platform</title>
+  <meta name="description" content="Power Platform architect, instructor, and consultant. Class materials and live GitHub projects.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">Tim Mayo</a>
+    <nav>
+      <a href="#teaching">Teaching</a>
+      <a href="#materials">Class materials</a>
+      <a href="#repos">Repositories</a>
+      <button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button>
+    </nav>
+  </header>
 
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-testing theme
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Microsoft Power Platform</p>
+      <h1>Architect, instructor, consultant.</h1>
+      <p class="lede">Governance, ALM, and implementations for GCC customers. Course materials and working projects live here.</p>
+      <div class="cta">
+        <a class="btn primary" href="classes/">Class materials</a>
+        <a class="btn" href="#repos">Browse repositories</a>
+      </div>
+    </section>
+
+    <section id="teaching" class="reveal">
+      <h2>What I teach</h2>
+      <ul class="cards">
+        <li>Power Apps</li>
+        <li>Power Automate</li>
+        <li>AI Builder</li>
+        <li>ALM with Dataverse</li>
+        <li>Copilot Studio</li>
+        <li>Power Platform for Administrators</li>
+        <li>Governance with the CoE Starter Kit</li>
+      </ul>
+    </section>
+
+    <section id="materials" class="reveal">
+      <h2>Class materials</h2>
+      <p>Materials are password-protected. Use the password provided in class.</p>
+      <a class="btn primary" href="classes/">Open class materials</a>
+    </section>
+
+    <section id="repos" class="reveal">
+      <h2>Repositories</h2>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search name, description, topic, language" aria-label="Search repositories">
+        <select id="lang" aria-label="Filter by language"><option value="">All languages</option></select>
+        <select id="sort" aria-label="Sort repositories">
+          <option value="updated">Recently updated</option>
+          <option value="stars">Most stars</option>
+          <option value="name">Name</option>
+          <option value="created">Newest</option>
+        </select>
+        <label class="chk"><input id="forks" type="checkbox" checked> Hide forks</label>
+        <button id="refresh" type="button" class="btn">Refresh</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/timmayo">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/mayotim/">LinkedIn</a>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
