@@ -71,3 +71,16 @@ footer{max-width:1000px;margin:0 auto;padding:32px 24px;color:var(--muted)}
 .cards li:hover{border-color:var(--accent)}
 .cards a:hover,.cards a:focus-visible{background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .cards a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Student feedback page */
+#form-panel input[type=password],#form-panel input[type=text],#form-panel textarea{width:100%;margin-bottom:14px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit}
+#form-panel textarea{min-height:110px;resize:vertical}
+.actions{margin-top:4px}
+#msg.ok{color:#2e9e5b}
+#msg.err{color:#d6453d}
+.feedback-list{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.fb{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.fb-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.fb-date{color:var(--muted);font-size:.85rem}
+.fb-name{color:var(--muted);font-size:.9rem;margin:2px 0 8px}
+.fb-text{margin:0;white-space:pre-wrap;word-break:break-word}
