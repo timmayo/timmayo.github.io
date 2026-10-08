@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student feedback · Tim Mayo</title>
+  <meta name="description" content="Feedback from students who attended Tim Mayo's Power Platform classes.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yu5m93iqfr");
+  </script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html">Tim Mayo</a>
+    <nav>
+      <a href="index.html#teaching">Teaching</a>
+      <a href="materials.html">Class materials</a>
+      <a href="feedback.html" aria-current="page">Student feedback</a>
+      <a href="index.html#repos">Repositories</a>
+      <a href="https://www.linkedin.com/in/mayotim/" target="_blank" rel="noopener">LinkedIn</a>
+      <button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Student feedback</p>
+      <h1>What students are saying.</h1>
+      <p class="lede">Attended one of my classes? Share your feedback. You'll need the password provided in class.</p>
+      <div class="cta">
+        <button id="open-form" class="btn primary" type="button">Share feedback</button>
+      </div>
+    </section>
+
+    <section id="form-panel" class="panel" hidden>
+      <form id="form" autocomplete="off">
+        <label for="password">Class password</label>
+        <input id="password" type="password" required>
+
+        <label for="name">Name (optional)</label>
+        <input id="name" type="text">
+
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" rows="5" required></textarea>
+
+        <div class="row actions">
+          <button id="submit-btn" class="btn primary" type="submit">Submit</button>
+          <button id="cancel-btn" class="btn" type="button">Cancel</button>
+        </div>
+      </form>
+      <p id="msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <p id="status" role="status" aria-live="polite">Loading feedback…</p>
+      <div id="list" class="feedback-list"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/feedback.js"></script>
+</body>
+</html>
