@@ -84,3 +84,8 @@ footer{max-width:1000px;margin:0 auto;padding:32px 24px;color:var(--muted)}
 .fb-date{color:var(--muted);font-size:.85rem}
 .fb-name{color:var(--muted);font-size:.9rem;margin:2px 0 8px}
 .fb-text{margin:0;white-space:pre-wrap;word-break:break-word}
+
+/* Class resources list with icons */
+.help ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.help li{display:flex;align-items:center;gap:10px}
+.ico{width:20px;height:20px;flex:none;color:var(--accent)}
