@@ -20,6 +20,7 @@
     <nav>
       <a href="#teaching">Teaching</a>
       <a href="materials.html">Class materials</a>
+      <a href="feedback.html">Student feedback</a>
       <a href="#repos">Repositories</a>
       <a href="https://www.linkedin.com/in/mayotim/" target="_blank" rel="noopener">LinkedIn</a>
       <button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button>
@@ -50,36 +51,7 @@
       </ul>
     </section>
 
-    <section id="materials" class="reveal">
-      <h2>Class materials</h2>
-      <p>Materials are password-protected. Use the password provided in class.</p>
-      <a class="btn primary" href="materials.html">Open class materials</a>
-    </section>
-
     <section id="repos" class="reveal">
       <h2>Repositories</h2>
       <div class="controls">
-        <input id="q" type="search" placeholder="Search name, description, topic, language" aria-label="Search repositories">
-        <select id="lang" aria-label="Filter by language"><option value="">All languages</option></select>
-        <select id="sort" aria-label="Sort repositories">
-          <option value="updated">Recently updated</option>
-          <option value="stars">Most stars</option>
-          <option value="name">Name</option>
-          <option value="created">Newest</option>
-        </select>
-        <label class="chk"><input id="forks" type="checkbox" checked> Hide forks</label>
-        <button id="refresh" type="button" class="btn">Refresh</button>
-      </div>
-      <p id="status" role="status" aria-live="polite"></p>
-      <div id="grid" class="grid"></div>
-    </section>
-  </main>
-
-  <footer>
-    <a href="https://github.com/timmayo">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/mayotim/">LinkedIn</a>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
-</body>
-</html>
+        <input id="q" type="search" placeholder="Search name, description, topic, language"
