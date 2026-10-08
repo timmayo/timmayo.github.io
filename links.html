@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Links · Tim Mayo</title>
+  <meta name="description" content="Articles and posts on the Power Platform, Copilot Studio, SharePoint and Teams, filterable by category, audience and date.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yu5m93iqfr");
+  </script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html">Tim Mayo</a>
+    <nav>
+      <a href="index.html#teaching">Teaching</a>
+      <a href="materials.html">Class materials</a>
+      <a href="feedback.html">Student feedback</a>
+      <a href="links.html" aria-current="page">Links</a>
+      <a href="index.html#repos">Repositories</a>
+      <a href="https://www.linkedin.com/in/mayotim/" target="_blank" rel="noopener">LinkedIn</a>
+      <button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Links</p>
+      <h1>What I'm reading.</h1>
+      <p class="lede">Articles and posts on the Power Platform, Copilot Studio, SharePoint and Teams. Filter by category, audience or date.</p>
+      <div class="cta">
+        <button id="manage-btn" class="btn" type="button">Manage links</button>
+      </div>
+    </section>
+
+    <section id="unlock-panel" class="panel" hidden>
+      <form id="unlock-form" autocomplete="off">
+        <label for="lk-password">Password</label>
+        <div class="row">
+          <input id="lk-password" type="password" required>
+          <button class="btn primary" type="submit">Unlock</button>
+        </div>
+      </form>
+      <p id="unlock-msg" class="lk-msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="add-panel" class="panel" hidden>
+      <form id="add-form" autocomplete="off">
+        <label for="new-url">Add a link</label>
+        <div class="row">
+          <input id="new-url" type="url" placeholder="https://…" required>
+          <button id="add-btn" class="btn primary" type="submit">Add link</button>
+        </div>
+      </form>
+      <p id="add-msg" class="lk-msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="lk">
+      <div class="lk-group"><h2>By Category</h2><div id="cats" class="lk-tiles"></div></div>
+      <div class="lk-group"><h2>By Audience</h2><div id="auds" class="lk-tiles"></div></div>
+      <div class="lk-group"><h2>By Date</h2><div id="dates" class="lk-tiles"></div></div>
+
+      <div class="lk-bar">
+        <input id="q" type="search" placeholder="Search links…" aria-label="Search links">
+        <button id="clear" class="lk-clear" type="button" hidden>Clear filters</button>
+      </div>
+      <p id="status" role="status" aria-live="polite">Loading links…</p>
+      <div id="list" class="lk-grid"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/links.js"></script>
+</body>
+</html>
