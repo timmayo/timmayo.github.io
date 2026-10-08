@@ -85,6 +85,13 @@ footer{max-width:1000px;margin:0 auto;padding:32px 24px;color:var(--muted)}
 .fb-name{color:var(--muted);font-size:.9rem;margin:2px 0 8px}
 .fb-text{margin:0;white-space:pre-wrap;word-break:break-word}
 
+/* Button hover and focus (fill colors unchanged) */
+.btn{transition:transform .15s,box-shadow .15s,border-color .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 16px color-mix(in srgb,var(--accent) 28%,transparent)}
+.btn.primary:hover{filter:brightness(1.12)}
+.btn:active{transform:translateY(0);box-shadow:none}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 /* Class resources list with icons */
 .help ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 .help li{display:flex;align-items:center;gap:10px}
