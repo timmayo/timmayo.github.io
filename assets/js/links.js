@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const GET_LINKS_URL = "PASTE_get-links_URL";
+  const GET_LINKS_URL = "https://d5753d79c5f9e75bbb0e8769af2df5.0e.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/21/workflows/32ef2531183d4e92a5e58cb535d112e7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Sz6P8sCa3m_eX2b0Sd8CvXWsv5ZuJbEKvHg4hRtOTb8";
   const ADD_LINK_URL = "PASTE_add-link_URL";
   const MANAGE_LINK_URL = "PASTE_manage-link_URL";
 
