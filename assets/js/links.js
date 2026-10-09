@@ -101,38 +101,53 @@
     return s;
   }
 
+  function pill(label, value){
+    const p = el("span", "lk-pill", value || "—");
+    p.dataset.v = value || "";
+    const wrap = el("span", "lk-field");
+    wrap.append(el("span", "lk-fl", label + ":"), p);
+    return wrap;
+  }
+
   function card(l){
     const art = el("article", "lk-card");
     art.dataset.id = l.id;
+    const href = safeUrl(l.url);
 
-    const imgBox = el("div", "lk-img");
+    const imgBox = el("a", "lk-img");
+    imgBox.href = href; imgBox.target = "_blank"; imgBox.rel = "noopener";
+    imgBox.tabIndex = -1; imgBox.setAttribute("aria-hidden", "true");
+    const placeholder = () => { imgBox.classList.add("lk-ph"); imgBox.textContent = ICONS[l.category] || "🔗"; };
     if (l.imageUrl) {
       const img = document.createElement("img");
       img.src = l.imageUrl;
       img.alt = "";
       img.loading = "lazy";
       img.referrerPolicy = "no-referrer";
-      img.addEventListener("error", () => { img.remove(); imgBox.textContent = "No image"; });
+      img.addEventListener("error", () => { img.remove(); placeholder(); });
       imgBox.append(img);
     } else {
-      imgBox.textContent = "No image";
+      placeholder();
     }
 
     const body = el("div", "lk-body");
     const h3 = el("h3");
     const a = el("a", null, l.title || l.url);
-    a.href = safeUrl(l.url); a.target = "_blank"; a.rel = "noopener";
+    a.href = href; a.target = "_blank"; a.rel = "noopener";
     h3.append(a);
 
-    const tags = el("div", "lk-tags");
-    tags.append(el("span", null, l.category), el("span", null, l.audience), el("span", "lk-date", fmtDate(l.created)));
+    const meta = el("div", "lk-meta");
+    meta.append(pill("Category", l.category), pill("Audience", l.audience));
+
+    const open = el("a", "btn primary lk-open", "Open link");
+    open.href = href; open.target = "_blank"; open.rel = "noopener";
 
     const admin = el("div", "lk-admin");
     const del = el("button", "btn danger", "Delete");
     del.type = "button"; del.dataset.del = "1";
     admin.append(select("category", CATEGORIES, l.category), select("audience", AUDIENCES, l.audience), del);
 
-    body.append(h3, el("p", null, l.summary || ""), tags, admin);
+    body.append(h3, el("p", "lk-sum", l.summary || ""), meta, el("span", "lk-date", fmtDate(l.created)), open, admin);
     art.append(imgBox, body);
     return art;
   }
