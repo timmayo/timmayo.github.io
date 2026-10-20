@@ -17,7 +17,7 @@ a{color:var(--accent)}
 #theme{background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:2px 10px;cursor:pointer;font-size:1rem}
 main{max-width:1000px;margin:0 auto;padding:0 24px}
 section{padding:48px 0}
-.hero{padding:96px 0 56px}
+.hero{padding:40px 0 32px}
 .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0}
 h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:.3em 0}
 h2{font-size:1.6rem;margin:0 0 16px}
@@ -99,6 +99,8 @@ footer{max-width:1000px;margin:0 auto;padding:32px 24px;color:var(--muted)}
 
 /* Links page */
 section.lk{padding:0 0 48px}
+.hero:has(+ .lk){padding-bottom:20px}
+.hero:has(+ .lk) .lede{margin-bottom:0}
 .lk-group{display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:start;margin:0;padding:14px 0;border-top:1px solid var(--line)}
 .lk-group h2{font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0;padding-top:8px}
 .lk-tiles{display:flex;gap:8px;flex-wrap:wrap}
@@ -124,17 +126,4 @@ section.lk{padding:0 0 48px}
 .lk-body h3{margin:0;font-size:1.08rem;font-weight:650;line-height:1.35;word-break:break-word}
 .lk-body h3 a{color:var(--fg);text-decoration:none}
 .lk-body h3 a:hover{color:var(--accent);text-decoration:underline}
-.lk-sum{margin:0;color:var(--muted);font-size:.92rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.lk-meta{display:flex;gap:6px 14px;flex-wrap:wrap;margin-top:auto;padding-top:4px;font-size:.82rem}
-.lk-field{display:inline-flex;align-items:center;gap:6px}
-.lk-fl{color:var(--muted);font-size:.78rem}
-.lk-pill{padding:3px 11px;border-radius:99px;color:#fff;background:#6b6f76;font-size:.78rem;font-weight:600;white-space:nowrap}
-.lk-pill[data-v="Power Platform"]{background:#c4204a}
-.lk-pill[data-v="Copilot Studio"]{background:#b34f0d}
-.lk-pill[data-v="SharePoint"]{background:#0b7a75}
-.lk-pill[data-v="Teams"]{background:#5558af}
-.lk-pill[data-v="Governance"]{background:#2d7a4b}
-.lk-pill[data-v="ALM / DevOps"]{background:#8a5a00}
-.lk-pill[data-v="Admin"]{background:#9b3d7a}
-.lk-pill[data-v="Developer"]{background:#4a3f8f}
-.lk-pill[data-v="User"]{backgro
+.lk-sum{margin:0;color:var(--muted);font-size:.92rem;line-height:1.55;display:-webkit-box;-webkit-l
