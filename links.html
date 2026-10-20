@@ -33,9 +33,20 @@
       <p class="eyebrow">Links</p>
       <h1>What I'm reading.</h1>
       <p class="lede">Articles and posts on the Power Platform, Copilot Studio, SharePoint and Teams. Filter by category, audience or date.</p>
-      <div class="cta">
-        <button id="manage-btn" class="btn" type="button">Manage links</button>
+    </section>
+
+    <section class="lk">
+      <div class="lk-group"><h2>By Category</h2><div id="cats" class="lk-tiles"></div></div>
+      <div class="lk-group"><h2>By Audience</h2><div id="auds" class="lk-tiles"></div></div>
+      <div class="lk-group"><h2>By Date</h2><div id="dates" class="lk-tiles"></div></div>
+
+      <div class="lk-bar">
+        <input id="q" type="search" placeholder="Search links…" aria-label="Search links">
+        <button id="clear" class="lk-clear" type="button" hidden>Clear filters</button>
       </div>
+      <p id="status" role="status" aria-live="polite">Loading links…</p>
+      <div id="list" class="lk-grid"></div>
+      <p id="more-wrap" hidden><button id="more" class="btn" type="button">Show more</button></p>
     </section>
 
     <section id="unlock-panel" class="panel" hidden>
@@ -61,16 +72,7 @@
     </section>
 
     <section class="lk">
-      <div class="lk-group"><h2>By Category</h2><div id="cats" class="lk-tiles"></div></div>
-      <div class="lk-group"><h2>By Audience</h2><div id="auds" class="lk-tiles"></div></div>
-      <div class="lk-group"><h2>By Date</h2><div id="dates" class="lk-tiles"></div></div>
-
-      <div class="lk-bar">
-        <input id="q" type="search" placeholder="Search links…" aria-label="Search links">
-        <button id="clear" class="lk-clear" type="button" hidden>Clear filters</button>
-      </div>
-      <p id="status" role="status" aria-live="polite">Loading links…</p>
-      <div id="list" class="lk-grid"></div>
+      <button id="manage-btn" class="btn" type="button">Manage links</button>
     </section>
   </main>
 
