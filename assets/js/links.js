@@ -15,6 +15,35 @@
     "Last 30 days": "📅", "Last 120 days": "🗓️", "Last 365 days": "📆"
   };
 
+  // Colored line icons (Tabler Icons, MIT), one hue per tile.
+  const GLYPHS = {
+    "Power Platform":  { c: "#D4537E", d: '<path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11"/>' },
+    "Copilot Studio":  { c: "#D85A30", d: '<path d="M6 6a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -4"/><path d="M12 2v2"/><path d="M9 12v9"/><path d="M15 12v9"/><path d="M5 16l4 -2"/><path d="M15 14l4 2"/><path d="M9 18h6"/><path d="M10 8v.01"/><path d="M14 8v.01"/>' },
+    "SharePoint":      { c: "#1D9E75", d: '<path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1"/><path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1"/><path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1"/><path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1"/>' },
+    "Teams":           { c: "#7F77DD", d: '<path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"/>' },
+    "Governance":      { c: "#639922", d: '<path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/>' },
+    "ALM / DevOps":    { c: "#BA7517", d: '<path d="M9.828 9.172a4 4 0 1 0 0 5.656a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828"/>' },
+    "Other":           { c: "#888780", d: '<path d="M4 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M18 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/>' },
+    "Admin":           { c: "#D4537E", d: '<path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>' },
+    "Developer":       { c: "#7F77DD", d: '<path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/>' },
+    "User":            { c: "#378ADD", d: '<path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>' }
+  };
+
+  function iconFor(label, active){
+    const ico = document.createElement("span");
+    ico.className = "lk-ico";
+    ico.setAttribute("aria-hidden", "true");
+    ico.style.cssText = "display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center";
+    const g = GLYPHS[label];
+    if (g) {
+      ico.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="' + (active ? "currentColor" : g.c) + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + g.d + '</svg>';
+    } else {
+      ico.textContent = ICONS[label] || "🔗";
+      ico.style.fontSize = "1.05rem";
+    }
+    return ico;
+  }
+
   const $ = id => document.getElementById(id);
   const root = document.documentElement;
 
@@ -84,8 +113,7 @@
       const b = el("button", "lk-tile" + (filters[key] === val ? " active" : ""));
       b.type = "button";
       b.setAttribute("aria-pressed", String(filters[key] === val));
-      const ico = el("span", "lk-ico", ICONS[label] || "🔗");
-      ico.setAttribute("aria-hidden", "true");
+      const ico = iconFor(label, filters[key] === val);
       b.append(ico, el("span", "lk-label", label), el("span", "lk-n", String(n)));
       b.addEventListener("click", () => { filters[key] = filters[key] === val ? null : val; visible = PAGE_SIZE; render(); });
       return b;
