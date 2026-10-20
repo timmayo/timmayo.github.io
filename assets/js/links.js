@@ -29,6 +29,9 @@
   const notConfigured = u => u.startsWith("PASTE_");
   const daysOld = l => (Date.now() - l.created) / 864e5;
 
+  const PAGE_SIZE = 12; // 4 rows of 3 cards
+  let visible = PAGE_SIZE;
+
   let links = [];
   const filters = { cat: null, aud: null, days: null, q: "" };
   let password = "";
@@ -84,7 +87,7 @@
       const ico = el("span", "lk-ico", ICONS[label] || "🔗");
       ico.setAttribute("aria-hidden", "true");
       b.append(ico, el("span", "lk-label", label), el("span", "lk-n", String(n)));
-      b.addEventListener("click", () => { filters[key] = filters[key] === val ? null : val; render(); });
+      b.addEventListener("click", () => { filters[key] = filters[key] === val ? null : val; visible = PAGE_SIZE; render(); });
       return b;
     }));
   }
@@ -158,12 +161,19 @@
     tiles($("dates"), DATES, "days", x => x[0], x => x[1]);
 
     const shown = links.filter(l => matches(l));
-    $("status").textContent = links.length ? `${shown.length} of ${links.length} links` : "No links yet.";
+    const page = shown.slice(0, visible);
+    $("status").textContent = !links.length ? "No links yet."
+      : page.length < shown.length ? `Showing ${page.length} of ${shown.length} links`
+      : `${shown.length} of ${links.length} links`;
     $("clear").hidden = !(filters.cat || filters.aud || filters.days || filters.q);
 
     const list = $("list");
-    list.replaceChildren(...shown.map(card));
+    list.replaceChildren(...page.map(card));
     if (links.length && !shown.length) list.append(el("p", "lk-empty", "No links match these filters."));
+
+    const left = shown.length - page.length;
+    $("more-wrap").hidden = left <= 0;
+    $("more").textContent = `Show more (${Math.min(left, PAGE_SIZE)} of ${left} remaining)`;
   }
 
   async function load(){
@@ -183,11 +193,12 @@
     }
   }
 
-  $("q").addEventListener("input", e => { filters.q = e.target.value.trim().toLowerCase(); render(); });
+  $("q").addEventListener("input", e => { filters.q = e.target.value.trim().toLowerCase(); visible = PAGE_SIZE; render(); });
   $("clear").addEventListener("click", () => {
     filters.cat = filters.aud = filters.days = null; filters.q = "";
-    $("q").value = ""; render();
+    $("q").value = ""; visible = PAGE_SIZE; render();
   });
+  $("more").addEventListener("click", () => { visible += PAGE_SIZE; render(); });
 
   // Manage mode (password is checked by the flow)
   function setAdmin(on){
